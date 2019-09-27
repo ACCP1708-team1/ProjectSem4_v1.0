@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2019 at 07:02 AM
+-- Generation Time: Sep 27, 2019 at 06:10 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -252,7 +252,7 @@ CREATE TABLE `servicer` (
   `title` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `id_category` int(11) NOT NULL,
   `description` int(11) NOT NULL,
-  `status` int(11) NOT NULL
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -292,7 +292,7 @@ ALTER TABLE `account_role`
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`,`title`,`status`);
+  ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
 -- Indexes for table `contact_us`
